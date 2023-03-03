@@ -17,7 +17,7 @@
                     <h2 class="heading">Futebool Brasil</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row m-2">
                 <div class="col-lg-4 mb-4">
                     <div class="custom-media d-block">
                         <div class="text">

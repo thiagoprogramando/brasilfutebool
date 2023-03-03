@@ -5,7 +5,7 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 offset-3">
+                <div class="col-lg-6 offset-lg-3">
                     <form action="#">
                         <div class="form-group text-center">
                             <h3>Bem-vindo(a), torcedor!</h3>

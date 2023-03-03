@@ -45,9 +45,10 @@
                                     <li class="active"><a href="/" class="nav-link">Início</a></li>
                                     <li><a href="/games" class="nav-link">Jogos</a></li>
                                     <li><a href="/about" class="nav-link">Como funciona?</a></li>
-                                    <!--<li><a href="" class="nav-link">Blog</a></li>-->
                                     <li><a href="/login" class="nav-link">Login / Cadastro</a></li>
                                     <li><a href="/ticket" class="nav-link">Tickets</a></li>
+                                    <li><a href="/player" class="nav-link">Player</a></li>
+                                    <li><a href="/store" class="nav-link">Minhas transmissões</a></li>
                                     <li><a href="/logout" class="nav-link">Sair</a></li>
                                 </ul>
                             </nav>
@@ -61,10 +62,12 @@
             @yield('conteudo')
 
             <footer class="footer-section">
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <div class=" pt-5">
-                            <p> Copyright &copy; Todos os direitos reservados | FuteboolBrasil.app </p>
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <div class=" pt-5">
+                                <p> Copyright &copy; Todos os direitos reservados | FuteboolBrasil.app </p>
+                            </div>
                         </div>
                     </div>
                 </div>

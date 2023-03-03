@@ -15,8 +15,8 @@
         }
     </style>
 
-    <div class="container site-section">
-        <div class="container">
+    <div class="site-section">
+        <div style="margin-top: 10% !important;" class="container">
 
             <div class="row">
                 <div class="col-6 title-section">
@@ -26,7 +26,7 @@
 
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <div class="ticket">
+                    <div class="ticket w-100">
                         <div class="ticket-content">
                             <small>Tickets</small>
                             <h1>10</h1>
@@ -50,7 +50,7 @@
 
                             <span class="meta">Extrato</span>
                             <h3 class="mb-4"><a href="/ticket">Transações</a></h3>
-                            <table class="p-5 w-100">
+                            <table class="table custom-table p-5 w-100">
                                 <thead>
                                     <tr>
                                         <th>Transação</th>
