@@ -26,3 +26,11 @@ Route::get('/ticket', function () {
     return view('ticket');
 });
 
+Route::get('/player', function () {
+    return view('player');
+});
+
+Route::get('/store', function () {
+    return view('store');
+});
+
