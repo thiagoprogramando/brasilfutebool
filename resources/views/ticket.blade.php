@@ -34,13 +34,15 @@
                     </div>
 
                     <div class="row p-3">
-                        <div class="form-group w-100">
-                            <label for="valor">Cada Ticket custa R$ 1,00</label>
-                            <input type="text" name="valor" id="valor" min="10" class="form-control" placeholder="Valor">
-                        </div>
-                        <div class="form-group w-100 text-center">
-                            <button type="button" class="btn btn-success btn-block">Gerar Pix</button>
-                        </div>
+                        <form action="" class="w-100">
+                            <div class="form-group">
+                                <label for="valor">Cada Ticket custa R$ 1,00</label>
+                                <input type="text" name="valor" id="valor" min="10" class="form-control" placeholder="Min 10,00">
+                            </div>
+                            <div class="form-group w-100 text-center">
+                                <button type="button" class="btn btn-success btn-block">Gerar Pix</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 

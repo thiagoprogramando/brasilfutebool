@@ -35,7 +35,7 @@
                 <div class="container">
                     <div class="d-flex align-items-center">
                         <div class="site-logo">
-                            <a href="index.html">
+                            <a href="{{ route('index') }}">
                                 <img src="{{ asset('assets/logo.png') }}" alt="Logo">
                             </a>
                         </div>
@@ -45,11 +45,15 @@
                                     <li class="active"><a href="/" class="nav-link">Início</a></li>
                                     <li><a href="/games" class="nav-link">Jogos</a></li>
                                     <li><a href="/about" class="nav-link">Como funciona?</a></li>
-                                    <li><a href="/login" class="nav-link">Login / Cadastro</a></li>
-                                    <li><a href="/ticket" class="nav-link">Tickets</a></li>
-                                    <li><a href="/player" class="nav-link">Player</a></li>
-                                    <li><a href="/store" class="nav-link">Minhas transmissões</a></li>
-                                    <li><a href="/logout" class="nav-link">Sair</a></li>
+                                    @auth
+                                        <li><a href="/ticket" class="nav-link">Tickets</a></li>
+                                        <li><a href="/player" class="nav-link">Player</a></li>
+                                        <li><a href="/store" class="nav-link">Minhas transmissões</a></li>
+                                        <li><a href="{{ route('login.logout') }}" class="nav-link">Sair</a></li>
+                                    @else
+                                        <li><a href="/login" class="nav-link">Login / Cadastro</a></li>
+                                    @endauth
+
                                 </ul>
                             </nav>
 
@@ -90,6 +94,41 @@
         <script src="{{ asset('soccer/js/jquery.sticky.js')}}"></script>
         <script src="{{ asset('soccer/js/jquery.mb.YTPlayer.min.js')}}"></script>
         <script src="{{ asset('soccer/js/main.js')}}"></script>
+
+        <script>
+            function verifiedCpf(){
+                let cpf = $('input[name=cpf]').val();
+                let token = '124678250wDRJmrCEXu225102800';
+                let error = document.querySelector('#error');
+
+                const button = document.querySelector('#registrer');
+
+                fetch(`http://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=${cpf}&token=${token}`, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Não foi possível obter os dados do CPF.');
+                    }
+                })
+                .then(data => {
+                    if (data.return == 'OK') {
+                        button.removeAttribute('disabled');
+                    } else {
+                        button.setAttribute('disabled', 'disabled');
+                        error.innerHTML = 'CPF INVÁLIDO!';
+                    }
+                })
+                .catch(error => {
+                    button.setAttribute('disabled', 'disabled');
+                    error.innerHTML = 'Não foi possível válidar o CPF!';
+                });
+            }
+        </script>
 
     </body>
 

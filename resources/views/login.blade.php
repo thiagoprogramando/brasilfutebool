@@ -6,15 +6,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <form action="#">
+                    <form action="{{ route('login.auth') }}" method="POST">
+                        @csrf
                         <div class="form-group text-center">
                             <h3>Bem-vindo(a), torcedor!</h3>
+                            @if($mensagem = Session::get('erro'))
+                                {{$mensagem}}
+                            @endif
+
+                            @if($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    {{$error}} <br>
+                                @endforeach
+                            @endif
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Senha">
+                            <input type="password" class="form-control" name="password" placeholder="Senha">
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary py-3 px-5">Acessar</button>

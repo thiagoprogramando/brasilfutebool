@@ -8,11 +8,11 @@
                         <h1 class="text-white">Assista <br> sem limites</h1>
                         <p>Assista aos principais jogos ao vivo, reserve seu lugar nos próximos duelos. Sem propagandas, sem extras!</p>
                         <p>
-                            <a href="/login" class="btn btn-primary py-3 px-4 mr-3">Comprar Tickets</a>
+                            <a href="{{ route('login') }}" class="btn btn-primary py-3 px-4 mr-3">Comprar Tickets</a>
                             <!-- Caso o usuário esteja logado deve redirecionar para /ticket
                             <a href="/tickt" class="btn btn-primary py-3 px-4 mr-3">Comprar Tickets</a>
                             -->
-                            <a href="/about" class="more light">Saiba mais</a>
+                            <a href="{{ route('about') }}" class="more light">Saiba mais</a>
                         </p>
                     </div>
                 </div>
