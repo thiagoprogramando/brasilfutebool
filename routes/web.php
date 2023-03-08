@@ -1,36 +1,30 @@
 <?php
 
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/games', function () {
-    return view('games');
-});
+Route::resource('users', UserController::class);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::post('/auth',[LoginController::class, 'auth'])->name('login.auth');
+Route::get('logout', [LoginController::class, 'logout'])->name('login.logout');
+Route::get('/registrer',[UserController::class, 'create'])->name('login.create');
 
-Route::get('/login', function () {
-    return view('login');
-});
 
-Route::get('/registrer', function () {
-    return view('registrer');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/login', [IndexController::class, 'login'])->name('login');
+Route::get('/about', [IndexController::class, 'about'])->name('about');
+Route::get('/games', [IndexController::class, 'games'])->name('games');
 
-Route::get('/ticket', function () {
-    return view('ticket');
-});
+Route::get('/index', [IndexController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/ticket', [IndexController::class, 'ticket'])->name('ticket')->middleware('auth');
 
-Route::get('/player', function () {
-    return view('player');
-});
+// Route::get('/player', function () {
+//     return view('player');
+// });
 
-Route::get('/store', function () {
-    return view('store');
-});
-
+// Route::get('/store', function () {
+//     return view('store');
+// });
